@@ -9,7 +9,7 @@ db.session.commit()
 
 ##Read ##
 
-all_puppies =Puppy.query.all()
+all_puppies =puppy.query.all()
 print(all_puppies)
 
 ##select by id
