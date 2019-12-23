@@ -5,6 +5,12 @@ from wtforms import StringField,PasswordField,SubmitField
 from wtforms.validators import DataRequired,Email,EqualTo
 from wtforms import ValidationError
 
+class LoginForm(FlaskForm):
+     email= StringField('Email',validators=[DataRequired(),Email()])
+     password=PasswordField('Password',validators=[DataRequired()])
+     submit= SubmitField("Log in")
+     
+
 class RegisterationForm(FlaskForm):
 	 email= StringField('Email',validators=[DataRequired(),Email()])
 	 username= StringField('Username',validators=[DataRequired()])
@@ -21,5 +27,5 @@ class RegisterationForm(FlaskForm):
                raise ValidationError('Username is taken!')
 
 
-               
+
        
