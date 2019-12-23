@@ -2,6 +2,10 @@ from myproject import db,login_manger
 from werkzeug.security import generate_password_hash,check_password_hash
 from flask_login import UserMixin
 
+@login_manager.user_loader
+def load_user(user_id)
+    return User.query.get(user_id)
+
 class User(db.Model,UserMixin):
 	__tablename__='users'
 
@@ -19,4 +23,3 @@ class User(db.Model,UserMixin):
      def check_password(self,password)
         return check_password_hash(self.password_hash,password)
 
-    
