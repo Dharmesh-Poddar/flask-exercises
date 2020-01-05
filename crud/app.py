@@ -11,20 +11,21 @@ class PuppyNames(Resource):
 		for pup in puppies:
 			if pup['name']==name:
 				return pup
-    
-        return {'name':none}
+        return {'name':None}
 
-     
-     def post(self,name):
+    def post(self,name):
      	pup={'name':name}
      	puppies.append(pup)
      	return pup
 
-     def delete(self,name):
+    def delete(self,name):
      	 for ind,pup in enumerate(puppies):
      	 	deleted_pup=puppies.pop(ind)
      	 	return {'note':'delete success'}
-     
+class AllNames(Resource):
+	def(self):
+		return {'puppies':puppies}
+
 
 
 if __name__=='__main__':
