@@ -7,7 +7,7 @@ api=Api(app)
 puppies=[]
 
 class PuppyNames(Resource):
-	def GET(self,name):
+	def get(self,name):
 		for pup in puppies:
 			if pup['name']==name:
 				return pup
@@ -15,6 +15,15 @@ class PuppyNames(Resource):
         return {'name':none}
 
      
+     def post(self,name):
+     	pup={'name':name}
+     	puppies.append(pup)
+     	return pup
+
+     def delete(self,name):
+     	 for ind,pup in enumerate(puppies):
+     	 	deleted_pup=puppies.pop(ind)
+     	 	return {'note':'delete success'}
      
 
 
