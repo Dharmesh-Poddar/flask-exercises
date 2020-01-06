@@ -11,7 +11,7 @@ class PuppyNames(Resource):
 		for pup in puppies:
 			if pup['name']==name:
 				return pup
-        return {'name':None}
+        #return {'name':None}
 
     def post(self,name):
      	pup={'name':name}
