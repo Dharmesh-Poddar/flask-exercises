@@ -20,9 +20,12 @@ stripe.api_key = stripe_keys['secret_key']
    def thankyou():
    	    return render_template('thankyou.html')
 
-@app.route('/payments')
+@app.route('/payments',methods=['POST'])
    def payments():
-   	     
+
+   	   customer= stripe.Customer.create(email=request.form['stripeEmail'],
+   	   	                                source=request.form['stripeToken'])
+      
 
 
 
