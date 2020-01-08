@@ -27,6 +27,18 @@ stripe.api_key = stripe_keys['secret_key']
    	   	                                source=request.form['stripeToken'])
       
 
+       #PAYMENT INFORMATION
+       charge= stripe.Charge.create(
+              
+               customer=customer.id,
+               amount=1999,
+               currency='usd',
+               description='donation'   
+
+       	)
+       
+    return(redirect(url_for(thankyou)))
+
 
 
 if __name__='__main__':
