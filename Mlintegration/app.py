@@ -1,15 +1,23 @@
-from flask import Flask,render_template
+from flask import Flask,request,render_template
+from predictor_api import make_prediction
+
+
 app=Flask(__name__)
 
-@app.route('/')
-def index():
-	return render_template('index.html')
-
-@app.route('/predict')
+@app.route('/',methods=['GET','POST'])
 def predict():
-	return render_template('predict.html')
+	print(request.args)
+	 if(request.args):
+        x_input, predictions = \
+            make_prediction(request.args['chat_in'])
+        print(x_input)
+        return flask.render_template('predictor.html',
+                                     chat_in=x_input,
+                                     prediction=predictions)
+ 	
+@app.route('/')
+def predict():
+	return render_template('')
 
-
-if __name__=='main':
+if __name__=='__main__':
 	app.run(debug='True')
-	
