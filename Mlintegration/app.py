@@ -15,6 +15,13 @@ def predict():
                                      chat_in=x_input,
                                      prediction=predictions)
  	
+     else:
+     	x_input,predictions=make_prediction('')
+     	return render_template('predictor.html',chat_in=x_input,prediction=predictions)
+     	
+
+
+
 @app.route('/')
 def predict():
 	return render_template('')
