@@ -1,8 +1,42 @@
+
 {%extends 'base.html' %}
+{%include 'header.html'%}
 {% block header %}
 employee management
 {% endblock %}
 
 {% block body %}
-thanks for the call
+  <div class="row">
+  	<div class="col md-12">
+  		 <div class="jumbotron p-3">
+           <h2>Manage Employees <button class="btn btn-success float-right" data-toggle="model" data-target="#mymodel"  >Submit</button></h2>
+             <table class="table table-dark  table-hover">
+               <tr>
+
+               	  <th> ID</th>
+               	  <th> Name </th>
+               	  <th> Email</th>
+               	  <th> Phone </th>
+               	  <th> Action </th>
+
+
+               </tr>
+                 <tr>
+                 	<th>01</th>
+                 	<th>Dharmesh</th>
+                 	<th>dharmeshpoddar3</th>
+                     <th>982800000</th>
+                      <th>
+                      	<a href="" class="btn btn-warning btn-xs "data-toggle="model" data-target="modeledit" >Edit</a>
+                      	<a href="" class="btn btn-danger btn-xs " onclick="return confirm('are you sure you want to delete?')" >Delete</a>
+                      </th>
+
+                 </tr>
+
+             </table>
+
+          </div>
+     </div>
+  </div>
+
 {%endblock%}
