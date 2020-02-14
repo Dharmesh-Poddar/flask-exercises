@@ -21,11 +21,12 @@ employee management
 
 
                </tr>
+               {% for row in employees%}
                  <tr>
-                 	<th>01</th>
-                 	<th>Dharmesh</th>
-                 	<th>dharmeshpoddar3</th>
-                     <th>982800000</th>
+                 	<th>{{row.id}}</th>
+                 	<th>{{row.name}}</th>
+                 	<th>{{row.email}}</th>
+                     <th>{{row.Phone}}</th>
                       <th>
                       	<a href="" class="btn btn-warning btn-xs "data-toggle="modal" data-target="#modaledit" >Edit</a>
                       	<a href="" class="btn btn-danger btn-xs " onclick="return confirm('are you sure you want to delete?')" >Delete</a>
@@ -74,7 +75,7 @@ employee management
      </div>
   </div>
 
-
+           {%endfor%}
 
              </table>
 
@@ -104,7 +105,7 @@ employee management
 
              <div class="form-group">
              	 <label>Phone no:</label>
-             	 <input type="text" name="email" class="form-control" required="1">
+             	 <input type="number" name="phone" class="form-control" required="1">
                  </div>
               <div class="form-group">
                   <button class="btn btn-primary">Add Employee</button>

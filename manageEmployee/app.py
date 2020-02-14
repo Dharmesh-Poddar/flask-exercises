@@ -28,9 +28,11 @@ def __init__(self,name,email,phone):
 
 @app.route('/')
 def index():
-	return render_template('index.html')
+	all_data= Data.query.all()
+	return render_template('index.html',employees=all_data)
 
-@app.route('/insert')
+
+@app.route('/insert',methods=['POST'])
 def insert():
       if request.method=='POST':
       	name=request.form['name']
