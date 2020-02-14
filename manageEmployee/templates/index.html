@@ -9,7 +9,7 @@ employee management
   <div class="row">
   	<div class="col md-12">
   		 <div class="jumbotron p-3">
-           <h2>Manage Employees <button class="btn btn-success float-right" data-toggle="model" data-target="#mymodel"  >Submit</button></h2>
+           <h2>Manage Employees <button class="btn btn-success float-right" data-toggle="modal" data-target="#myModal"  >Submit</button></h2>
              <table class="table table-dark  table-hover">
                <tr>
 
@@ -27,7 +27,7 @@ employee management
                  	<th>dharmeshpoddar3</th>
                      <th>982800000</th>
                       <th>
-                      	<a href="" class="btn btn-warning btn-xs "data-toggle="model" data-target="modeledit" >Edit</a>
+                      	<a href="" class="btn btn-warning btn-xs "data-toggle="modal" data-target="#modaledit" >Edit</a>
                       	<a href="" class="btn btn-danger btn-xs " onclick="return confirm('are you sure you want to delete?')" >Delete</a>
                       </th>
 
@@ -36,7 +36,94 @@ employee management
              </table>
 
           </div>
+
+
+         <!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Add Employee</h4>
+      </div>
+      <div class="modal-body">
+          <form action="" method="POST">
+          	<div class="form-group"> 
+          		<label>Name:</label>
+          		<input type="text" name="name" class="form-control" required="1">
+             </div>
+            <div class="form-group">
+            	<label>Email:</label>
+            	<input type="text" name="email" class="form-control" required="1">
+             </div>
+
+             <div class="form-group">
+             	 <label>Phone no:</label>
+             	 <input type="text" name="email" class="form-control" required="1">
+                 </div>
+              <div class="form-group">
+                  <button class="btn btn-primary">Add Employee</button>
+
+              </div>
+          </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
      </div>
   </div>
+
+
+
+<!-- modal edit -->
+         <!-- Modal -->
+<div id="modaledit" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Add Employee</h4>
+      </div>
+      <div class="modal-body">
+          <form action="" method="POST">
+          	<div class="form-group"> 
+          		<label>Name:</label>
+          		<input type="text" name="name" class="form-control" required="1">
+             </div>
+            <div class="form-group">
+            	<label>Email:</label>
+            	<input type="text" name="email" class="form-control" required="1">
+             </div>
+
+             <div class="form-group">
+             	 <label>Phone no:</label>
+             	 <input type="text" name="email" class="form-control" required="1">
+                 </div>
+              <div class="form-group">
+                  <button class="btn btn-primary">Update the employee</button>
+
+              </div>
+          </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+     </div>
+  </div>
+
 
 {%endblock%}
