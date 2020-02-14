@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request,url_for,redirect
 from flask_bootstrap import Bootstrap 
 from flask_sqlalchemy import SQLAlchemy 
 import os
@@ -29,6 +29,19 @@ def __init__(self,name,email,phone):
 @app.route('/')
 def index():
 	return render_template('index.html')
+
+@app.route('/insert')
+def insert():
+      if request.method=='POST':
+      	name=request.form['name']
+      	email=request.form['email']
+      	phone=request.form['phone']
+
+      	mydata= Data(name,email,phone)
+      	db.session.add(mydata)
+      	db.session.commit()
+
+      	return redirect(url_for('index'))
 
 
 if __name__=='__main__':
