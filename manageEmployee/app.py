@@ -1,7 +1,7 @@
 from flask import Flask,render_template,request
 from flask_bootstrap import Bootstrap 
 from flask_sqlalchemy import SQLAlchemy 
-
+import os
 
 app=Flask(__name__)
 Bootstrap(app)
@@ -19,11 +19,10 @@ class Data(db.Model):
 	 email= db.Column(db.String(100))
 	 phone= db.Column(db.String(100))
 
-     def __init__(self, id,name,email,phone)
-         self.id= id
-         self.name= name
-         self.email= email
-         self.phone= phone
+def __init__(self,name,email,phone):
+     self.name= name
+     self.email= email
+     self.phone= phone
 
 
 
