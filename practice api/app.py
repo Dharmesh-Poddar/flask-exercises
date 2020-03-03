@@ -4,15 +4,28 @@ from flask_restful import Resource,Api
 app=Flask(__name__)
 api=Api(app)
 
-class HelloWorld(Resource):
-	 def __init__(self):
-	 	pass
-	 def get(self):
-	 	return{
+Data=[]
 
-	 	"Hello":"World"
-	 	}
+class People(Resource):
+    def get(self):
+        for x in Data:
+            if x['Data']==name:
+                return x
+        return {'Data':None}
 
-api.add_resource(HelloWorld,'/')
-if __name__ == '__main__':
+    def post(self, name):
+        Tem= {'Data':name}
+        Data.append(Tem)
+        return Tem
+
+    def delete(self):
+    	for ind,x in enumerate(Data):
+    		if x['Data']==name:
+    			Tem =Data.pop(ind)
+    			return {'Note':"Deleted"}
+
+api.add_resource(People,'/Name/<string:name>')
+
+
+if __name__=='__main__':
 	app.run(debug=True)
