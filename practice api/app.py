@@ -20,8 +20,8 @@ class People(Resource):
 
     def delete(self):
     	for ind,x in enumerate(Data):
-    		if x['Data']==name:
-    			Tem =Data.pop(ind)
+    		if x['Data']== name:
+    			Tem = Data.pop(ind)
     			return {'Note':"Deleted"}
 
 api.add_resource(People,'/Name/<string:name>')
