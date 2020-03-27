@@ -1,17 +1,3 @@
-The table of contents lists the main topic of focus in each part, but each article also covers other topics
-
-
-## Votr in action
-
-![create a poll](/static/images/screenshot.png)
-
-![votr](/static/gifs/votr.gif)
-
-## Installation
-
-```bash
-https://github.com/danidee10/Votr.git
-```
 
 Install requirements
 
