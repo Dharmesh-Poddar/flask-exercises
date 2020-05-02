@@ -1,5 +1,5 @@
 import os
-from flask import Flask,request
+from flask import Flask,request,render_template
 import requests
 from flask_sqlalchemy import SQLAlchemy 
 
@@ -9,6 +9,9 @@ app.config['SQLALCHEMY_DATABASE_URI']= 'sqlite:///'+os.path.join(basedir,'data.s
 
 db= SQLAlchemy(app)
 
+@app.route('/')
+def home():
+	return render_template('home.html')
 
 
 
