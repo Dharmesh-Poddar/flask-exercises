@@ -13,7 +13,12 @@ db= SQLAlchemy(app)
 def home():
 	return render_template('home.html')
 
-
+@app.route('/success', method=['POST'])
+def success():
+	if request.method=='POST':
+		f = request.files['file']  
+        f.save(f.filename)  
+        return render_template("success.html", name = f.filename)  
 
 
 if __name__=='__main__':
