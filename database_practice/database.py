@@ -1,12 +1,12 @@
 from app import db,Rajasthan
 db.create_all()
 
-nagaur= Rajasthan(21,nagaur)
-chittor= Rajasthan(2, chittor)
+nag= Rajasthan(21,'nagaur','temples')
+chi= Rajasthan(2,'chittor','fort')
 
-db.session.add_all([nagaur, chittor])
+db.session.add_all([nag, chi])
 db.session.commit()
 
-print(nagaur.id)
+print(nag.id)
 
-print(chittor.id)
+print(chi.id)
